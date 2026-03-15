@@ -1,16 +1,58 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <title>Bot-Lab — Apache Testseite</title>
   <style>
-    body { font-family: sans-serif; max-width: 860px; margin: 2rem auto; padding: 0 1.5rem; color: #222; }
-    h1   { font-size: 1.4rem; }
-    nav a { margin-right: 1rem; color: #0055cc; }
-    .box  { background: #f2f5ff; border-left: 4px solid #4466dd; padding: 1rem 1.2rem; border-radius: 4px; margin-top: 1.5rem; }
-    code  { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: .9em; }
+    body {
+      font-family: sans-serif;
+      max-width: 860px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      color: #222;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+    }
+
+    nav a {
+      margin-right: 1rem;
+      color: #0055cc;
+    }
+
+    .box {
+      background: #f2f5ff;
+      border-left: 4px solid #4466dd;
+      padding: 1rem 1.2rem;
+      border-radius: 4px;
+      margin-top: 1.5rem;
+    }
+
+    code {
+      background: #eee;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-size: .9em;
+    }
   </style>
+  <!-- Matomo -->
+  <script>
+    var _paq = window._paq = window._paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function () {
+      var u = "//localhost:18083/";
+      _paq.push(['setTrackerUrl', u + 'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+      g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+    })();
+  </script>
+  <!-- End Matomo Code -->
 </head>
+
 <body>
   <h1>Bot-Lab — KI-Bot Tracking (Apache)</h1>
   <nav>
@@ -29,4 +71,5 @@
   </div>
   <p>Apache-Log liegt unter <code>./logs/access.log</code> — direkt für alle Tools zugänglich.</p>
 </body>
+
 </html>

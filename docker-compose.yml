@@ -1,5 +1,6 @@
 services:
 
+  # ─── Apache: der zu analysierende Webserver ──────────────────────────────
   apache:
     image: httpd:2.4-alpine
     container_name: bot-lab-apache
@@ -12,6 +13,7 @@ services:
     networks:
       - bot-net
 
+  # ─── GoAccess: Realtime Log-Dashboard ────────────────────────────────────
   goaccess:
     image: allinurl/goaccess:latest
     container_name: bot-lab-goaccess
@@ -46,6 +48,7 @@ services:
     networks:
       - bot-net
 
+  # ─── AWStats ─────────────────────────────────────────────────────────────
   awstats:
     build:
       context: ./awstats
@@ -63,6 +66,62 @@ services:
     networks:
       - bot-net
 
+  # ─── Matomo: MariaDB ─────────────────────────────────────────────────────
+  matomo-db:
+    image: mariadb:10.11
+    container_name: bot-lab-matomo-db
+    environment:
+      MYSQL_ROOT_PASSWORD: matomo_root
+      MYSQL_DATABASE: matomo
+      MYSQL_USER: matomo
+      MYSQL_PASSWORD: matomo_pass
+    volumes:
+      - matomo-db:/var/lib/mysql
+    networks:
+      - bot-net
+
+  # ─── Matomo: Web-App ─────────────────────────────────────────────────────
+  matomo:
+    build:
+      context: ./matomo
+      dockerfile: Dockerfile
+    container_name: bot-lab-matomo
+    ports:
+      - "18083:80"    # Matomo Web-UI  →  http://localhost:18083
+    volumes:
+      - matomo-data:/var/www/html
+    environment:
+      MATOMO_DATABASE_HOST: matomo-db
+      MATOMO_DATABASE_ADAPTER: mysql
+      MATOMO_DATABASE_TABLES_PREFIX: matomo_
+      MATOMO_DATABASE_USERNAME: matomo
+      MATOMO_DATABASE_PASSWORD: matomo_pass
+      MATOMO_DATABASE_DBNAME: matomo
+    depends_on:
+      - matomo-db
+    networks:
+      - bot-net
+
+  # ─── Matomo Log Importer: importiert Apache-Log periodisch ───────────────
+  matomo-log-importer:
+    image: python:3.12-slim
+    container_name: bot-lab-matomo-importer
+    volumes:
+      - logs:/var/log/apache2:ro
+      - matomo-data:/var/www/html:ro   # Zugriff auf import_logs.py
+      - ./matomo/importer.sh:/importer.sh:ro
+    entrypoint: ["bash", "/importer.sh"]
+    environment:
+      - MATOMO_URL=http://matomo:80
+      - MATOMO_SITE_ID=1
+      # Token wird nach Matomo-Setup eingetragen (siehe README)
+      - MATOMO_TOKEN=efacdfc38b47d0ab1f76fed64c76788d
+    depends_on:
+      - matomo
+    networks:
+      - bot-net
+
+  # ─── Log-Generator ───────────────────────────────────────────────────────
   log-generator:
     build:
       context: ./scripts
@@ -76,14 +135,14 @@ services:
     networks:
       - bot-net
 
-  # ─── Analyzer: Web-Interface ──────────────────────────────────────────────
+  # ─── Python-Analyzer ─────────────────────────────────────────────────────
   analyzer:
     build:
       context: ./scripts
       dockerfile: Dockerfile.analyzer
     container_name: bot-lab-analyzer
     ports:
-      - "18082:5000"    # Web-UI  →  http://localhost:18082
+      - "18082:5000"
     volumes:
       - logs:/logs:ro
       - ./scripts/output:/output
@@ -95,6 +154,8 @@ services:
 volumes:
   logs:
   goaccess-report:
+  matomo-db:
+  matomo-data:
 
 networks:
   bot-net:

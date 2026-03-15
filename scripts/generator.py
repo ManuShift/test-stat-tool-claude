@@ -159,7 +159,7 @@ def main():
             time.sleep(random.uniform(2, 5))
 
         # Pause zwischen Runden (60–120 Sekunden)
-        pause = random.randint(60, 120)
+        pause = random.randint(10, 20)
         print(f"\nPause {pause}s bis zur nächsten Runde...")
         time.sleep(pause)
 
