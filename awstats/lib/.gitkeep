@@ -1,0 +1,9 @@
+# Diese Datei wird beim ersten Container-Start automatisch
+# mit der echten robots.pm aus dem AWStats-Paket befüllt.
+#
+# Danach findest du hier die vollständige AWStats Bot-Datenbank
+# und kannst KI-Bots direkt eintragen.
+#
+# Siehe ./README.txt für Anleitung.
+#
+# Noch nicht initialisiert — starte zuerst: docker compose up -d

@@ -1,0 +1,39 @@
+# KI-Bot Einträge für AWStats robots.pm
+# =======================================
+# Nach dem ersten "docker compose up -d" findest du in diesem
+# Verzeichnis die echte robots.pm. Füge folgende Einträge ein:
+#
+# SCHRITT 1: In RobotsSearchIDOrder_listx (alphabetisch einsortieren)
+# ─────────────────────────────────────────────────────────────────────
+# Suche nach dem Array-Block, z.B. nach 'googlebot' und füge ein:
+#
+#   'amazonbot',
+#   'anthropic\-ai',
+#   'claudebot',
+#   'chatgpt\-user',
+#   'google\-extended',
+#   'gptbot',
+#   'perplexitybot',
+#   'bytespider',
+#
+#
+# SCHRITT 2: In %RobotsHashIDLib (Anzeigename + URL)
+# ────────────────────────────────────────────────────
+# Suche nach dem Hash-Block und füge ein:
+#
+#   'amazonbot'      =>['Amazonbot (Amazon)',          'https://developer.amazon.com/support/amazonbot'],
+#   'anthropic-ai'   =>['Anthropic AI Crawler',        'https://www.anthropic.com'],
+#   'claudebot'      =>['ClaudeBot (Anthropic)',        'https://www.anthropic.com/claude-web'],
+#   'chatgpt-user'   =>['ChatGPT-User (OpenAI)',        'https://openai.com/bot'],
+#   'google-extended'=>['Google-Extended (AI Training)','https://developers.google.com/search'],
+#   'gptbot'         =>['GPTBot (OpenAI)',              'https://openai.com/gptbot'],
+#   'perplexitybot'  =>['PerplexityBot',                'https://perplexity.ai/perplexitybot'],
+#   'bytespider'     =>['Bytespider (ByteDance/TikTok)','https://bytedance.com'],
+#
+#
+# SCHRITT 3: Änderungen aktivieren
+# ──────────────────────────────────
+#   docker compose restart awstats
+#
+# AWStats liest robots.pm beim nächsten Update-Zyklus automatisch neu ein
+# (der Entrypoint kopiert deine lokale Version in den Container).

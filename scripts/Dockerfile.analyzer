@@ -1,0 +1,6 @@
+FROM python:3.12-slim
+RUN pip install flask dnspython tabulate --no-cache-dir
+COPY analyze.py /app/analyze.py
+COPY analyzer_web.py /app/analyzer_web.py
+WORKDIR /app
+CMD ["python3", "analyzer_web.py"]
