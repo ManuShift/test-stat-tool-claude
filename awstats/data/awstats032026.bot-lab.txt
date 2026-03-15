@@ -8,33 +8,33 @@ AWSTATS DATA FILE 7.8 (build 20200416)
 # update).
 BEGIN_MAP 28
 POS_GENERAL 1990                
-POS_TIME 2671                
-POS_VISITOR 6239                
-POS_DAY 6488                
-POS_DOMAIN 3190                
-POS_LOGIN 3419                
-POS_ROBOT 3574                
-POS_WORMS 3942                
-POS_EMAILSENDER 4073                
-POS_EMAILRECEIVER 4216                
-POS_SESSION 6570                
-POS_SIDER 6707                
-POS_FILETYPES 4351                
-POS_DOWNLOADS 4452                
-POS_OS 4500                
-POS_BROWSER 4647                
-POS_SCREENSIZE 4840                
-POS_UNKNOWNREFERER 4914                
-POS_UNKNOWNREFERERBROWSER 5062                
-POS_ORIGIN 5205                
-POS_SEREFERRALS 5339                
-POS_PAGEREFS 5483                
-POS_SEARCHWORDS 5631                
-POS_KEYWORDS 5783                
-POS_MISC 2335                
-POS_ERRORS 5842                
-POS_CLUSTER 3275                
-POS_SIDER_404 5930                
+POS_TIME 2672                
+POS_VISITOR 6251                
+POS_DAY 6503                
+POS_DOMAIN 3197                
+POS_LOGIN 3426                
+POS_ROBOT 3581                
+POS_WORMS 3951                
+POS_EMAILSENDER 4082                
+POS_EMAILRECEIVER 4225                
+POS_SESSION 6585                
+POS_SIDER 6722                
+POS_FILETYPES 4360                
+POS_DOWNLOADS 4461                
+POS_OS 4509                
+POS_BROWSER 4658                
+POS_SCREENSIZE 4852                
+POS_UNKNOWNREFERER 4926                
+POS_UNKNOWNREFERERBROWSER 5074                
+POS_ORIGIN 5217                
+POS_SEREFERRALS 5351                
+POS_PAGEREFS 5495                
+POS_SEARCHWORDS 5643                
+POS_KEYWORDS 5795                
+POS_MISC 2336                
+POS_ERRORS 5854                
+POS_CLUSTER 3282                
+POS_SIDER_404 5942                
 END_MAP
 
 # LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
@@ -46,10 +46,10 @@ END_MAP
 # MonthHostsKnown   = Number of hosts known
 # MonthHostsUnKnown = Number of hosts unknown
 BEGIN_GENERAL 8
-LastLine 20260315140818 938 159922 11777818580077
+LastLine 20260315143508 1285 220247 10539802501361
 FirstTime 20260315125355
-LastTime 20260315140743
-LastUpdate 20260315140856 12 0 12 0 0
+LastTime 20260315143459
+LastUpdate 20260315143508 27 0 27 0 0
 TotalVisits 3                   
 TotalUnique 3                   
 MonthHostsKnown 0                   
@@ -58,16 +58,16 @@ END_GENERAL
 
 # Misc ID - Pages - Hits - Bandwidth
 BEGIN_MISC 10
-TotalMisc 0 0 0
 JavascriptDisabled 0 0 0
+JavaEnabled 0 0 0
+AddToFavourites 0 0 0
+FlashSupport 0 0 0
 DirectorSupport 0 0 0
 RealPlayerSupport 0 0 0
-FlashSupport 0 0 0
 WindowsMediaPlayerSupport 0 0 0
-AddToFavourites 0 0 0
-JavaEnabled 0 0 0
-PDFSupport 0 0 0
 QuickTimeSupport 0 0 0
+PDFSupport 0 0 0
+TotalMisc 0 0 0
 END_MISC
 
 # Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
@@ -86,7 +86,7 @@ BEGIN_TIME 24
 11 0 0 0 0 0 0
 12 28 31 19303 24 36 17392
 13 237 288 158323 301 462 230524
-14 30 36 23880 57 85 43992
+14 182 222 130722 155 246 124981
 15 0 0 0 0 0 0
 16 0 0 0 0 0 0
 17 0 0 0 0 0 0
@@ -101,7 +101,7 @@ END_TIME
 # Domain - Pages - Hits - Bandwidth
 # The 10 first Pages must be first (order not required for others)
 BEGIN_DOMAIN 1
-ip 295 355 201506
+ip 447 541 308348
 END_DOMAIN
 
 # Cluster ID - Pages - Hits - Bandwidth
@@ -116,12 +116,12 @@ END_LOGIN
 # Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
 # The 10 first Hits must be first (order not required for others)
 BEGIN_ROBOT 6
-bot[\s_+:,\.\;\/\\-] 211 113497 20260315140607 31
-Googlebot/ 77 41492 20260315140353 11
-[\s_+:,\.\;\/\\-]bot 77 41492 20260315140818 11
+bot[\s_+:,\.\;\/\\-] 274 147445 20260315143237 40
+Googlebot/ 108 59477 20260315143508 16
+unknown 85 28645 20260315143449 85
+nbot 84 45264 20260315143250 12
 CCBot/ 77 41492 20260315140804 11
-unknown 59 19883 20260315140744 59
-nbot 49 26404 20260315140403 7
+[\s_+:,\.\;\/\\-]bot 77 41492 20260315140818 11
 END_ROBOT
 
 # Worm ID - Hits - Bandwidth - Last visit
@@ -141,8 +141,8 @@ END_EMAILRECEIVER
 
 # Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
 BEGIN_FILETYPES 2
-html 295 182966 0 0
-xml 60 18540 0 0
+html 447 279302 0 0
+xml 94 29046 0 0
 END_FILETYPES
 
 # Downloads - Hits - Bandwidth
@@ -151,24 +151,24 @@ END_DOWNLOADS
 
 # OS ID - Hits
 BEGIN_OS ID - Hits - Pages 6
-android 69 55
-Unknown 46 39
-linux 55 48
-win10 69 59
-ios_iphone 58 47
-macosx 58 47
+linux 74 65
+android 107 85
+win10 120 99
+Unknown 70 59
+macosx 83 67
+ios_iphone 87 72
 END_OS
 
 # Browser ID - Hits - Pages
 BEGIN_BROWSER 8
-chrome124.0.0.0 34 30
-firefox125.0 55 48
-chrome120.0.0.0 30 25
+Unknown 70 59
+firefox125.0 74 65
+safari17.4 83 67
+chrome120.0.0.0 48 40
 firefox148.0 5 4
-safari17.4 58 47
-firefox124.0 69 55
-Unknown 46 39
-safari 58 47
+chrome124.0.0.0 67 55
+firefox124.0 107 85
+safari 87 72
 END_BROWSER
 
 # Screen size - Hits
@@ -177,17 +177,17 @@ END_SCREENSIZE
 
 # Unknown referer OS - Last visit date
 BEGIN_UNKNOWNREFERER 1
-anthropic-ai/1.0_(_https://www.anthropic.com) 20260315135853
+anthropic-ai/1.0_(_https://www.anthropic.com) 20260315143501
 END_UNKNOWNREFERER
 
 # Unknown referer Browser - Last visit date
 BEGIN_UNKNOWNREFERERBROWSER 1
-anthropic-ai/1.0_(_https://www.anthropic.com) 20260315135853
+anthropic-ai/1.0_(_https://www.anthropic.com) 20260315143501
 END_UNKNOWNREFERERBROWSER
 
 # Origin - Pages - Hits 
 BEGIN_ORIGIN 6
-From0 293 352
+From0 445 538
 From1 0 0
 From2 0 0
 From3 0 0
@@ -216,7 +216,7 @@ END_KEYWORDS
 
 # Errors - Hits - Bandwidth
 BEGIN_ERRORS 1
-403 32 7648
+403 38 9082
 END_ERRORS
 
 # URL with 404 errors - Hits - Last URL referrer
@@ -228,13 +228,13 @@ END_SIDER_404
 # The 10 first Hits must be first (order not required for others)
 BEGIN_VISITOR 3
 172.20.0.3 247 295 164026 20260315135602 20260315125355 /
-172.20.0.4 44 55 35699 20260315140743 20260315135758 /article.html
+172.20.0.4 196 241 142541 20260315143459 20260315135758 /article.html
 172.20.0.1 4 5 1781 20260315135431 20260315130129 /
 END_VISITOR
 
 # Date - Pages - Hits - Bandwidth - Visits
 BEGIN_DAY 1
-20260315 295 355 201506 3
+20260315 447 541 308348 3
 END_DAY
 
 # Session range - Number of visits
@@ -244,8 +244,8 @@ END_SESSION
 # URL - Pages - Bandwidth - Entry - Exit
 # The 10 first Pages must be first (order not required for others)
 BEGIN_SIDER 4
-/ 119 149760 1 0
-/blog.html 61 11346 1 0
-/article.html 60 11520 0 0
-/about.html 55 10340 1 0
+/ 181 229120 1 0
+/about.html 92 17296 1 0
+/article.html 87 16704 0 0
+/blog.html 87 16182 1 0
 END_SIDER

@@ -58,7 +58,6 @@ services:
       - ./awstats/conf/awstats.bot-lab.conf:/etc/awstats/awstats.bot-lab.conf
       - ./awstats/lib:/awstats-lib
       - ./awstats/data:/var/lib/awstats
-      - ./awstats/icons:/usr/share/awstats/wwwroot/icon
     depends_on:
       - apache
     networks:
